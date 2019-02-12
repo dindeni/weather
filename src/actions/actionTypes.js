@@ -1,0 +1,3 @@
+export const LIST_WEATHER = 'LIST_WEATHER';
+export const CITIES_SEARCH = 'CITIES_SEARCH';
+export const SEARCH_VALUE = 'SEARCH_VALUE';

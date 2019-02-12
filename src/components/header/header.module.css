@@ -1,0 +1,21 @@
+.header__logo {
+  color: #cfe8c9;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'bebas_neuebold', sans-serif;
+  background: url("./image/head.svg") no-repeat;
+  background-size: 100% 100%;
+  width: 50%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*@media (min-width: 500px) {
+  .header__logo{
+    font-size: 50px;
+    line-height: 56px;
+  }
+}*/
