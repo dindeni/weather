@@ -1,10 +1,11 @@
-import {CITIES_SEARCH, LIST_WEATHER, SEARCH_VALUE} from "../actions/actionTypes";
+import {CITIES_SEARCH, GEOLOCATION, LIST_WEATHER, SEARCH_VALUE} from "../actions/actionTypes";
 
 const initialState = {
-    list: {},
+    listWeather: {},
     loading: false,
     searchCity: {},
-    searchValue: ''
+    searchValue: '',
+    geolocation: ''
 };
 
 export const reducer = (state = initialState, action)=>{
@@ -14,7 +15,7 @@ export const reducer = (state = initialState, action)=>{
         return {
             ...state,
             loading: true,
-            list: action.list
+            listWeather: action.list
         };
         case CITIES_SEARCH:
             return {
@@ -25,6 +26,12 @@ export const reducer = (state = initialState, action)=>{
             return{
                 ...state,
                 searchValue: action.searchValue
+            };
+        case GEOLOCATION:
+            return{
+              ...state,
+                geolocation: action.geolocation,
+                /*searchValue: action.geolocation*/
             };
         default: return{...state}
     }

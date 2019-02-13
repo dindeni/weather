@@ -7,5 +7,6 @@
 .header__form-input{
     border:  2px solid #2c4357;
     border-radius: 15px;
-    width: 100%;
+    width: calc(100% - 5px);
+    padding-left: 5px;
 }

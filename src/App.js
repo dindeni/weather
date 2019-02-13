@@ -23,32 +23,31 @@ class App extends Component {
         })
   }
 
-  componentDidMount() {
+ /* componentDidMount() {
       this.props.preloadShow();
       this.props.getCities();
 
-  }
+  }*/
 
     render(){
     /*this.getWeather();*/
-        let load = null;
+        /*let load = null;
         if (this.props.loading){
-            console.log(this.props.cities);
 
             load = <div>{this.props.list.name}:{this.props.list.population}</div>
-       }
+       }*/
 
     return (
       <div className={classes}>
           <Header/>
         <p>Hi, there</p>
-          {load}
+          {/*{load}*/}
       </div>
     );
   }
 }
 
-const mapStateToProps = state =>{
+/*const mapStateToProps = state =>{
   return{
       loading: state.reducer.loading,
       list: state.reducer.list,
@@ -57,10 +56,10 @@ const mapStateToProps = state =>{
 };
 
 const mapDispatchToProps = dispatch =>({
-    preloadShow: ()=>dispatch(getAction()),
-    getCities: ()=>dispatch(getCities())
-});
+    /!*preloadShow: ()=>dispatch(getAction()),*!/
+    /!*getCities: ()=>dispatch(getCities())*!/
+});*/
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps) (App);
+export default  (App);
