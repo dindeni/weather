@@ -8,35 +8,42 @@ class FormSearch extends Component{
     componentDidMount() {
            this.props.getGeolocation();
 
-
         }
-
-
 
     search = (evt)=>{
         evt.preventDefault();
 
-       new Promise((resolve => {
-           resolve(this.props.search(evt.target.value))
-       })).then(()=>{
-           this.props.getCities(this.props.searchValue)
-
-       })
+       return new Promise((resolve => {
+           resolve(this.props.search(evt.target.value))}))
            .then(()=>{
-               this.props.getWeather(this.props.searchCity[0].GeoObject.name);
-               console.log(this.props.searchCity[0].GeoObject.name)
 
-           });
+           clearTimeout(this.deb);
+           this.deb = setTimeout(()=>{
+               if (this.props.searchValue !== ''){
+                   this.props.getCities(this.props.searchValue);
+               }
 
-        /*console.log(this.props.searchCity[0])*/
+           }, 1000)
+       })
+           .catch((err)=>{
+               console.log(err)
+           })
+
 
 
 
     };
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        /*if (this.props.searchValue === ''){
-            this.props.search(this.props.geolocation.geolocation);
-        }*//*console.log(this.props.searchValue)*/
+    componentDidUpdate(prevProps, prevState) {
+        if (this.props.searchCity !== prevProps.searchCity &&
+            this.props.searchCity.length !== 0){
+
+                this.props.getWeather(this.props.searchCity[0].GeoObject.name);
+        }
+
+        if (this.props.listWeather !== prevProps.listWeather){
+            console.log(this.props.listWeather)
+        }
+
     }
 
     render(){

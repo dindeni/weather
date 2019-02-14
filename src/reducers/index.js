@@ -15,7 +15,7 @@ export const reducer = (state = initialState, action)=>{
         return {
             ...state,
             loading: true,
-            listWeather: action.list
+            listWeather: action
         };
         case CITIES_SEARCH:
             return {

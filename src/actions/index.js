@@ -14,7 +14,7 @@ export const getWeather = (city)=> dispatch=>{
             .then((data)=>{
 
                 dispatch({type: LIST_WEATHER,
-                listWeather: data.city});
+                listWeather: data});
 
             })
             .catch((err)=>{
@@ -43,6 +43,7 @@ export const getCities = (city)=> dispatch=>{
 };
 
 export const search =(data)=> (dispatch) =>{
+
 
     dispatch({
         type: SEARCH_VALUE,
