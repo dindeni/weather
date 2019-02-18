@@ -25,13 +25,19 @@ export const getWeather = (city)=> dispatch=>{
 export const getCities = (city)=> dispatch=>{
     const apiKey = '256272e7-641a-4b6f-b591-57f67ef723a3';
     const url = 'https://geocode-maps.yandex.ru/1.x/?apikey=' + apiKey +
-        '&geocode=' + city + '&format=json';
+        '&geocode=' + city + '&kind=locality&lang=en_US&format=json';
     fetch(url)
         .then((res)=>{
             return res.json()
         })
         .then((data)=>{
-            dispatch({
+            /*console.log(data.response.GeoObjectCollection.featureMember==={});
+            if (data.response.GeoObjectCollection.featureMember === undefined){
+                dispatch({
+                    type: CITIES_SEARCH,
+                    searchCity: 'not found'
+                })
+            }else*/ dispatch({
                 type: CITIES_SEARCH,
                 searchCity: data.response
 

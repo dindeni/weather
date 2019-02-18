@@ -1,9 +1,9 @@
-import {CITIES_SEARCH, GEOLOCATION, LIST_WEATHER, SEARCH_VALUE} from "../actions/actionTypes";
+import {CITIES_NULL, CITIES_SEARCH, GEOLOCATION, LIST_WEATHER, SEARCH_VALUE} from "../actions/actionTypes";
 
 const initialState = {
     listWeather: {},
     loading: false,
-    searchCity: {},
+    searchCity: '',
     searchValue: '',
     geolocation: ''
 };
@@ -21,6 +21,11 @@ export const reducer = (state = initialState, action)=>{
             return {
               ...state,
               searchCity: action.searchCity.GeoObjectCollection.featureMember
+            };
+        case CITIES_NULL:
+            return{
+              ...state,
+              searchCity: ''
             };
         case SEARCH_VALUE:
             return{

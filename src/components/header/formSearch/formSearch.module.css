@@ -1,6 +1,6 @@
 .header__form-search{
     display: block;
-    width: 50%;
+    width: 51%;
     margin: 0 auto;
 }
 
@@ -9,4 +9,36 @@
     border-radius: 15px;
     width: calc(100% - 5px);
     padding-left: 5px;
+}
+.header__form-ul {
+    margin-top: 0;
+    padding: 0;
+    background: white;
+    position: absolute;
+    width: calc(51% - 4px) ;
+    border:  2px solid #2c4357;
+    border-radius: 15px;
+    font-size: calc(1vw + 0.2em);
+    text-transform: capitalize;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+}
+.header__form-list{
+    list-style: none;
+    padding: 5px;
+}
+.header__form-map{
+    width: 20%;
+    left: calc(5% / 2);
+    height: calc(20vw * 3);
+    position: absolute;
+}
+
+@media (min-width: 700px) {
+    .header__form-map{
+        height: calc(20vw * 2)
+    }
 }
