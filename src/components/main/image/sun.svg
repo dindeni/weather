@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="65"
+     viewBox="0 0 64 65" fill="black">
+    <defs>
+        <path id="dmhsa"
+              d="M97.499 254.583c0 8.725-7.072 15.796-15.795 15.796-8.726 0-15.798-7.07-15.798-15.796 0-8.722 7.072-15.794 15.798-15.794 8.723 0 15.795 7.072 15.795 15.795z"/>
+        <path id="dmhsb"
+              d="M83.783 233.102a2.081 2.081 0 0 1-4.162 0v-8.18c0-1.15.933-2.079 2.082-2.079 1.15 0 2.08.928 2.08 2.078z"/>
+        <path id="dmhsc"
+              d="M67.984 237.924c.811.812.811 2.13 0 2.944a2.087 2.087 0 0 1-2.94 0l-5.788-5.788a2.083 2.083 0 0 1 .001-2.943 2.083 2.083 0 0 1 2.941 0z"/>
+        <path id="dmhsd"
+              d="M60.221 252.506a2.078 2.078 0 1 1 0 4.157l-8.18.002a2.082 2.082 0 0 1-2.082-2.08 2.08 2.08 0 0 1 2.082-2.08z"/>
+        <path id="dmhse"
+              d="M65.043 268.304a2.08 2.08 0 0 1 2.941 2.94l-5.785 5.79a2.083 2.083 0 0 1-2.943-.005 2.077 2.077 0 0 1 0-2.94z"/>
+        <path id="dmhsf"
+              d="M79.62 276.065a2.082 2.082 0 0 1 4.164 0v8.186a2.078 2.078 0 0 1-2.082 2.077 2.079 2.079 0 0 1-2.081-2.077z"/>
+        <path id="dmhsg"
+              d="M95.418 271.248a2.083 2.083 0 0 1 2.944-2.944l5.786 5.788a2.077 2.077 0 0 1 0 2.943 2.085 2.085 0 0 1-2.941 0z"/>
+        <path id="dmhsh"
+              d="M103.18 256.67a2.078 2.078 0 0 1-2.075-2.085c0-1.149.93-2.077 2.078-2.077h8.181a2.072 2.072 0 0 1 2.081 2.077c0 1.15-.93 2.084-2.078 2.084z"/>
+        <path id="dmhsi"
+              d="M98.363 240.87a2.076 2.076 0 0 1-2.939-.002 2.08 2.08 0 0 1-.004-2.944l5.786-5.781a2.074 2.074 0 0 1 2.942 0c.814.81.814 2.13.003 2.937z"/>
+    </defs>
+    <g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsa"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsb"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsc"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsd"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhse"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsf"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsg"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsh"/>
+        </g>
+        <g transform="translate(-50 -222)">
+            <use fill="#5e8093" xlink:href="#dmhsi"/>
+        </g>
+    </g>
+</svg>

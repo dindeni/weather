@@ -1,0 +1,78 @@
+.main{
+    width: 100%;
+    display: flex;
+}
+.main__weather-now{
+    background: #e4ffdd;
+    width: 45%;
+    margin: 10px auto 0;
+    font-family: 'firamono-bold', sans-serif;
+    text-transform: uppercase;
+    color: #5e8093;
+}
+.main__day-week{
+    /*width: 80%;*/
+    padding: 10px 0 15px 10px;
+    box-shadow: 0 5px  5px #bcd3b7;
+}
+.main__temperature{
+    padding: 15px 0 15px 5%;
+    color: #5e8093;
+    font-size: calc(1vw + 1.5em);
+    position: relative;
+}
+.main__temperature::after{
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 3px;
+    background: #5e8093;
+    bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.main__weather-now-svg{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+.main__weather-now-header-container{
+    text-transform: lowercase;
+    margin: 5px 0;
+}
+.main__weather-now-wind{
+    text-align: end;
+    position: relative;
+    margin: 5px 3% 5px 0;
+}
+.main__weather-now-svg---wind{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 5%;
+    bottom: -6px;
+}
+.main__weather-now-city{
+    display: inline-block;
+    margin: 5px 5% 5px;
+}
+.main__weather-now-humidity{
+   display: inline-block;
+    float: right;
+    margin: 5px 3% 0;
+    position: relative;
+}
+.main__weather-now-svg---humidity{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 100%;
+    bottom: -3px;
+}
+.main__weather-now-day{
+    text-align: center;
+    margin: 5px 3% 0;
+}
+

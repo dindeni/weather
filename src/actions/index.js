@@ -1,26 +1,6 @@
 import {CITIES_SEARCH, GEOLOCATION, LIST_WEATHER, SEARCH_VALUE} from "./actionTypes";
 
-export const getWeather = (city)=> dispatch=>{
-    const url = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city +
-        ',ru&units=metric&&lang=ru&mode=json' +
-        '&APPID=6c32be7c80652742598856ff94eefdc9';
 
-
-        fetch(url)
-            .then((res)=>{
-
-                return res.json()
-            })
-            .then((data)=>{
-
-                dispatch({type: LIST_WEATHER,
-                listWeather: data});
-
-            })
-            .catch((err)=>{
-                console.log(err)
-            })
-};
 
 export const getCities = (city)=> dispatch=>{
     const apiKey = '256272e7-641a-4b6f-b591-57f67ef723a3';
@@ -31,13 +11,7 @@ export const getCities = (city)=> dispatch=>{
             return res.json()
         })
         .then((data)=>{
-            /*console.log(data.response.GeoObjectCollection.featureMember==={});
-            if (data.response.GeoObjectCollection.featureMember === undefined){
-                dispatch({
-                    type: CITIES_SEARCH,
-                    searchCity: 'not found'
-                })
-            }else*/ dispatch({
+             dispatch({
                 type: CITIES_SEARCH,
                 searchCity: data.response
 
@@ -65,7 +39,6 @@ export const getGeolocation = ()=>(dispatch)=>{
             return res.json()
         })
         .then((data)=>{
-            console.log(data.city);
             dispatch({
                 type: GEOLOCATION,
                 geolocation: data,

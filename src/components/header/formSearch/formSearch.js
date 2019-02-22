@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {search, getGeolocation, getCities, getWeather} from "../../../actions";
+import {search, getGeolocation, getCities} from "../../../actions";
+import {getWeather} from "../../../actions/actionsWeather";
 import classes from './formSearch.module.css';
 import {CITIES_NULL} from "../../../actions/actionTypes";
 
 class FormSearch extends Component{
-    static = {
-        searchLoad: false
-    };
+
     componentDidMount() {
-           this.props.getGeolocation();
+        //get location
+      this.props.getGeolocation();
+
+      if (this.props.geolocation !== ''){
+          console.log(this,this.props.geolocation.city)
+      }
+
            //init map
         this.init=()=>{
             this.myMap =  new window.ymaps.Map('map', {
@@ -22,12 +27,13 @@ class FormSearch extends Component{
         };
         }
 
+
     search = (evt)=>{
         evt.preventDefault();
 
-       return new Promise((resolve => {
-           resolve(this.props.search(evt.target.value))}))
-           .then(()=>{
+       const prom = new Promise(resolve => {
+           resolve(this.props.search(evt.target.value))});
+           prom.then(()=>{
 
            clearTimeout(this.deb);
            this.deb = setTimeout(()=>{
@@ -48,7 +54,7 @@ class FormSearch extends Component{
         if (this.props.searchCity !== prevProps.searchCity &&
             this.props.searchCity.length !== 0){
 
-            this.props.getWeather(this.props.searchCity[0].GeoObject.name);
+            this.props.getWeatherNow(this.props.searchCity[0].GeoObject.name, 'now');
             //map coordinates
             this.coordX = this.props.searchCity[0].GeoObject.Point.pos.slice(9);
             this.coordY = this.props.searchCity[0].GeoObject.Point.pos.slice(0, 9);
@@ -59,6 +65,7 @@ class FormSearch extends Component{
                 this.myMap.destroy()
             }
         }
+
 
 
         if (this.props.listWeather !== prevProps.listWeather){
@@ -72,13 +79,18 @@ class FormSearch extends Component{
     }
 
     onclickList(value){
-        this.props.search(value.GeoObject.name);
+        this.props.search(`${value.GeoObject.name}, ${value.GeoObject.description}`);
         this.props.getCitiesNull();
+
 
     }
 
     render(){
-
+        //call weather
+       if(this.props.listWeather === '' && this.props.geolocation !== ''){
+           this.props.getWeatherNow(this.props.geolocation.city,
+               this.props.geolocation.country, 'now')
+       }
         let searchValue = null;
         (this.props.geolocation !== '') ?
             searchValue = `${this.props.geolocation.city}, ${
@@ -119,6 +131,8 @@ class FormSearch extends Component{
             else {list = null;
             }
 
+
+
         return(
             <div>
                 <form className={classes["header__form-search"]}
@@ -152,7 +166,8 @@ const mapDispatchToProps = (dispatch)=>({
     search: (data)=>dispatch(search(data)),
     getGeolocation: ()=>dispatch(getGeolocation()),
     getCities: (city)=>dispatch(getCities(city)),
-    getWeather: (city)=>dispatch(getWeather(city)),
+    getWeatherNow: (city, country, typeWeather)=>dispatch(getWeather(city, country,
+        typeWeather)),
     getCitiesNull: ()=>dispatch({type: CITIES_NULL})
 });
 

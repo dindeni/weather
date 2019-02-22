@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import classes from './App/App.module.css';
 import Header from "./components/header/header";
+import Main from "./components/main/main";
 
 class App extends Component {
 
@@ -14,10 +15,9 @@ class App extends Component {
     render(){
 
     return (
-      <div className={classes}>
+      <div className={classes["body"]}>
           <Header/>
-        <p>Hi, there</p>
-          {/*{load}*/}
+          <Main/>
       </div>
     );
   }
