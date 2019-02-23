@@ -4,7 +4,7 @@
 }
 .main__weather-now{
     background: #e4ffdd;
-    width: 45%;
+    width: 160px;
     margin: 10px auto 0;
     font-family: 'firamono-bold', sans-serif;
     text-transform: uppercase;
@@ -16,9 +16,10 @@
     box-shadow: 0 5px  5px #bcd3b7;
 }
 .main__temperature{
-    padding: 15px 0 15px 5%;
+    padding: 15px 3% 15px 0;
+    text-align: end;
     color: #5e8093;
-    font-size: calc(1vw + 1.5em);
+    font-size: 30px;
     position: relative;
 }
 .main__temperature::after{
@@ -37,6 +38,7 @@
     width: 50px;
     height: 50px;
     position: absolute;
+    left: 0;
 }
 .main__weather-now-header-container{
     text-transform: lowercase;
@@ -74,5 +76,33 @@
 .main__weather-now-day{
     text-align: center;
     margin: 5px 3% 0;
+}
+@media (min-width: 700px) {
+    .main__weather-now{
+        width: 250px;
+    }
+    .main__temperature{
+        text-align: end;
+        font-size: 40px;
+    }
+    .main__weather-now-svg{
+        width: 60px;
+        height: 60px;
+        left: 11%;
+    }
+    .main__weather-now-header-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 5px 0 0 35px;
+        font-size: 22px;
+    }
+    .main__weather-now-svg---wind{
+        left: -42px;
+        bottom: -6px;
+    }
+    .main__weather-now-svg---humidity{
+
+    }
 }
 

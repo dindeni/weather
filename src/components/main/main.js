@@ -7,7 +7,7 @@ import svg from './image/sprite.symbol.svg'
 
 const main =(listWeather)=>{
 
-const options ={weekday: 'long', month: 'short'};
+/*const options ={weekday: 'long', month: 'short'};*/
 
 
 const getDate = (dataType)=>{
