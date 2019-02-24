@@ -6,7 +6,6 @@ export const getWeather = (city, country, typeWeather)=> dispatch=>{
           typeWeather = 'weather'
 
     }
-    console.log(typeWeather);
     const url = 'https://api.openweathermap.org/data/2.5/' + typeWeather +
         '?q=' + city + ',' + country + '&units=metric&&lang=en&mode=json' +
         '&APPID=6c32be7c80652742598856ff94eefdc9';
@@ -24,6 +23,6 @@ export const getWeather = (city, country, typeWeather)=> dispatch=>{
 
         })
         .catch((err)=>{
-            console.log(err)
+            console.log(err);
         })
 };

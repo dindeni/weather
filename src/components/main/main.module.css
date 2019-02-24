@@ -4,19 +4,20 @@
 }
 .main__weather-now{
     background: #e4ffdd;
-    width: 160px;
+    width: 200px;
     margin: 10px auto 0;
     font-family: 'firamono-bold', sans-serif;
     text-transform: uppercase;
     color: #5e8093;
+    padding-bottom: 15px;
 }
 .main__day-week{
     /*width: 80%;*/
-    padding: 10px 0 15px 10px;
+    padding: 10px 0 10px 15px;
     box-shadow: 0 5px  5px #bcd3b7;
 }
 .main__temperature{
-    padding: 15px 3% 15px 0;
+    padding: 15px 15px 15px 0;
     text-align: end;
     color: #5e8093;
     font-size: 30px;
@@ -38,44 +39,47 @@
     width: 50px;
     height: 50px;
     position: absolute;
-    left: 0;
+    left: 5px;
 }
 .main__weather-now-header-container{
     text-transform: lowercase;
-    margin: 5px 0;
+    padding: 10px 15px 10px 40px;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .main__weather-now-wind{
-    text-align: end;
+    /*text-align: end;*/
     position: relative;
-    margin: 5px 3% 5px 0;
+    padding: 5px 10px 0 0;
+    /*margin: 5px 3% 5px 0;*/
 }
 .main__weather-now-svg---wind{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute;
-    left: 5%;
+    left: -40px;
     bottom: -6px;
 }
 .main__weather-now-city{
     display: inline-block;
-    margin: 5px 5% 5px;
+    padding: 5px 40px 0 0;
 }
 .main__weather-now-humidity{
-   display: inline-block;
-    float: right;
-    margin: 5px 3% 0;
     position: relative;
+    padding: 5px 10px 0 0;
 }
 .main__weather-now-svg---humidity{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     right: 100%;
-    bottom: -3px;
+    bottom: -2px;
 }
 .main__weather-now-day{
     text-align: center;
     margin: 5px 3% 0;
+    padding-right: 40px;
 }
 @media (min-width: 700px) {
     .main__weather-now{
@@ -88,14 +92,15 @@
     .main__weather-now-svg{
         width: 60px;
         height: 60px;
-        left: 11%;
+        /*left: 11%;*/
     }
     .main__weather-now-header-container{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin: 5px 0 0 35px;
-        font-size: 22px;
+        font-size: 16px;
+        padding: 0 15px 10px 20px;
     }
     .main__weather-now-svg---wind{
         left: -42px;

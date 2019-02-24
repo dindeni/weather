@@ -54,7 +54,7 @@ class FormSearch extends Component{
         if (this.props.searchCity !== prevProps.searchCity &&
             this.props.searchCity.length !== 0){
 
-            this.props.getWeatherNow(this.props.searchCity[0].GeoObject.name, 'now');
+            //this.props.getWeatherNow(this.props.searchCity[0].GeoObject.name, 'now');
             //map coordinates
             this.coordX = this.props.searchCity[0].GeoObject.Point.pos.slice(9);
             this.coordY = this.props.searchCity[0].GeoObject.Point.pos.slice(0, 9);
@@ -79,8 +79,12 @@ class FormSearch extends Component{
     }
 
     onclickList(value){
-        this.props.search(`${value.GeoObject.name}, ${value.GeoObject.description}`);
+        this.props.search(`${value.GeoObject.name}, ${
+            value.GeoObject.description}`);
         this.props.getCitiesNull();
+
+       this.props.getWeatherNow(value.GeoObject.name, value.GeoObject.description,
+           'now')
 
 
     }
@@ -130,6 +134,8 @@ class FormSearch extends Component{
             }
             else {list = null;
             }
+
+
 
 
 

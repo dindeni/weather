@@ -28,23 +28,25 @@ const getDate = (dataType)=>{
 };
 
 const getWeather = (swithValue)=>{
-    if (listWeather.listWeather !== ''){
+
+    if (listWeather.listWeather !== '' && listWeather.listWeather.cod !== '404'){
         switch (swithValue) {
             case 'temp':
-                return (listWeather.listWeather.main.temp).toFixed(1)
+                return (listWeather.listWeather.main.temp).toFixed(1);
             case 'wind':
                 return listWeather.listWeather.wind.speed;
             case 'cityName':
-                return listWeather.listWeather.name;
+                return (listWeather.listWeather.name);
             case 'humidity':
                 return listWeather.listWeather.main.humidity
         }
 
-    }
+    }else return 'city not found'
 };
 
 const clouds = ()=>{
-        if (listWeather.listWeather !== ''){
+
+        if (listWeather.listWeather !== '' && listWeather.listWeather.cod !== '404'){
             const value = listWeather.listWeather.clouds.all;
            switch (true) {
                 case value > 0 && value < 30:
@@ -59,9 +61,9 @@ const clouds = ()=>{
     };
 
 
-    if (listWeather.listWeather !== ''){
+    /*if (listWeather.listWeather !== ''){
         console.log(listWeather.listWeather.clouds.all)
-    }
+    }*/
 
 
 
