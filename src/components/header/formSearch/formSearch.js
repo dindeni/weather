@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 import {search, getGeolocation, getCities} from "../../../actions";
-import {getWeather} from "../../../actions/actionsWeather";
+import {getWeather, getWeatherForecast} from "../../../actions/actionsWeather";
 import classes from './formSearch.module.css';
 import {CITIES_NULL} from "../../../actions/actionTypes";
 
@@ -84,7 +84,10 @@ class FormSearch extends Component{
         this.props.getCitiesNull();
 
        this.props.getWeatherNow(value.GeoObject.name, value.GeoObject.description,
-           'now')
+           'now');
+
+        this.props.getWeatherForecast(value.GeoObject.name,
+            value.GeoObject.description)
 
 
     }
@@ -93,7 +96,12 @@ class FormSearch extends Component{
         //call weather
        if(this.props.listWeather === '' && this.props.geolocation !== ''){
            this.props.getWeatherNow(this.props.geolocation.city,
-               this.props.geolocation.country, 'now')
+               this.props.geolocation.country, 'now');
+
+           /*this.props.getWeatherNow(this.props.geolocation.city,
+               this.props.geolocation.country, 'forecast');*/
+           this.props.getWeatherForecast(this.props.geolocation.city,
+               this.props.geolocation.country)
        }
         let searchValue = null;
         (this.props.geolocation !== '') ?
@@ -136,9 +144,6 @@ class FormSearch extends Component{
             }
 
 
-
-
-
         return(
             <div>
                 <form className={classes["header__form-search"]}
@@ -163,7 +168,8 @@ const mapStateToProps = state =>{
         searchValue: state.reducer.searchValue,
         geolocation: state.reducer.geolocation,
         listWeather: state.reducer.listWeather,
-        searchCity: state.reducer.searchCity
+        searchCity: state.reducer.searchCity,
+        listForecast: state.reducer.listForecast
     }
 
 };
@@ -174,7 +180,8 @@ const mapDispatchToProps = (dispatch)=>({
     getCities: (city)=>dispatch(getCities(city)),
     getWeatherNow: (city, country, typeWeather)=>dispatch(getWeather(city, country,
         typeWeather)),
-    getCitiesNull: ()=>dispatch({type: CITIES_NULL})
+    getCitiesNull: ()=>dispatch({type: CITIES_NULL}),
+    getWeatherForecast: (city, country)=>dispatch(getWeatherForecast(city, country))
 });
 
 

@@ -3,3 +3,4 @@ export const CITIES_SEARCH = 'CITIES_SEARCH';
 export const CITIES_NULL = 'CITIES_NULL';
 export const SEARCH_VALUE = 'SEARCH_VALUE';
 export const GEOLOCATION = 'GEOLOCATION';
+export const LIST_FORECAST = 'LIST_FORECAST';

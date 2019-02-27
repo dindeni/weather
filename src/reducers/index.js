@@ -1,7 +1,8 @@
-import {CITIES_NULL, CITIES_SEARCH, GEOLOCATION, LIST_WEATHER, SEARCH_VALUE} from "../actions/actionTypes";
+import {CITIES_NULL, CITIES_SEARCH, GEOLOCATION, LIST_WEATHER, SEARCH_VALUE, LIST_FORECAST} from "../actions/actionTypes";
 
 const initialState = {
     listWeather: '',
+    listForecast: '',
     loading: false,
     searchCity: '',
     searchValue: '',
@@ -15,8 +16,13 @@ export const reducer = (state = initialState, action)=>{
         return {
             ...state,
             loading: true,
-            listWeather: action.listWeather
+            listWeather: action.listWeather,
         };
+        case LIST_FORECAST:
+            return{
+                ...state,
+                listForecast: action
+            };
         case CITIES_SEARCH:
             return {
               ...state,

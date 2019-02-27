@@ -40,6 +40,7 @@
     left: calc(5% / 2);
     height: calc(20vw * 3);
     position: absolute;
+    z-index: 100;
 }
 
 @media (min-width: 700px) {

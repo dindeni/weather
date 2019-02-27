@@ -2,10 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import classes from './main.module.css';
-import svg from './image/sprite.symbol.svg'
+import svg from './image/sprite.symbol.svg';
+import Forecast from './forecast/forecast';
 
 
-const main =(listWeather)=>{
+const main =({listWeather, listForecast})=>{
 
 /*const options ={weekday: 'long', month: 'short'};*/
 
@@ -29,25 +30,41 @@ const getDate = (dataType)=>{
 
 const getWeather = (swithValue)=>{
 
-    if (listWeather.listWeather !== '' && listWeather.listWeather.cod !== '404'){
+    if (listWeather !== '' && listWeather.cod !== '404'){
         switch (swithValue) {
             case 'temp':
-                return (listWeather.listWeather.main.temp).toFixed(1);
+                return (listWeather.main.temp).toFixed(1);
             case 'wind':
-                return listWeather.listWeather.wind.speed;
+                return listWeather.wind.speed;
             case 'cityName':
-                return (listWeather.listWeather.name);
+                return (listWeather.name);
             case 'humidity':
-                return listWeather.listWeather.main.humidity
+                return listWeather.main.humidity
         }
 
-    }else return 'city not found'
+    }else return 'city not found';
+
+
 };
+
+const test =()=>{
+    if (listForecast !== ''){
+        console.log(listForecast.listForecast)
+    }
+
+
+
+
+
+
+};
+
+
 
 const clouds = ()=>{
 
-        if (listWeather.listWeather !== '' && listWeather.listWeather.cod !== '404'){
-            const value = listWeather.listWeather.clouds.all;
+        if (listWeather !== '' && listWeather.cod !== '404'){
+            const value = listWeather.clouds.all;
            switch (true) {
                 case value > 0 && value < 30:
                     return 'sun';
@@ -113,15 +130,19 @@ return(
 
                 </div>
             </div>
+            <Forecast/>
 
 
         </main>
     );
 };
 
+
 const mapStateToProps = state =>{
     return{
-        listWeather: state.reducer.listWeather
+
+        listWeather: state.reducer.listWeather,
+        listForecast: state.reducer.listForecast
     }
 
 };

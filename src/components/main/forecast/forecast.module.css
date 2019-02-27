@@ -1,0 +1,75 @@
+.forecast{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.weather{
+    background: #e4ffdd;
+    width: 150px;
+    /*margin: 10px 0 0;*/
+    font-family: 'firamono-bold', sans-serif;
+    text-transform: uppercase;
+    color: #e4ffdd;
+    padding-bottom: 15px;
+}
+.day-week{
+    /*width: 80%;*/
+    padding: 10px 0 10px 15px;
+}
+.temperature{
+    padding: 52px 15px 15px 0;
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+}
+.temperature::after{
+    position: absolute;
+    content: '';
+    width: 90%;
+    height: 3px;
+    background: #e4ffdd;
+    bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.weather-container{
+    text-transform: uppercase;
+    padding: 10px 0 0 50px;
+    font-size: 14px;
+}
+.weather-svg{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.weather-wind{
+    /*text-align: end;*/
+    position: relative;
+    padding: 5px 0 0 0;
+    /*margin: 5px 3% 5px 0;*/
+}
+.weather-svg---wind{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: -40px;
+    bottom: -6px;
+}
+.weather-humidity{
+    position: relative;
+    padding: 5px 0 0 0;
+}
+.weather-svg---humidity{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -40px;
+    bottom: -2px;
+}
