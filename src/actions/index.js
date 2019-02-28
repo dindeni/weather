@@ -30,7 +30,7 @@ export const search =(data)=> (dispatch) =>{
 };
 
 export const getGeolocation = ()=>(dispatch)=>{
-    fetch('http://ip-api.com/json')
+    fetch('https://ipapi.co/json')
         .then((res)=>{
             return res.json()
         })
