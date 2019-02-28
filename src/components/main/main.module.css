@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
 }
 .main__weather-now{
     background: #e4ffdd;
@@ -14,7 +15,6 @@
     padding-bottom: 15px;
 }
 .main__day-week{
-    /*width: 80%;*/
     padding: 10px 0 10px 15px;
     box-shadow: 0 5px  0 #bcd3b7;
 }

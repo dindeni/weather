@@ -1,0 +1,29 @@
+.container{
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.design{
+    color: #2c4357;
+    padding-left: 10px;
+
+}
+.link{
+    color: #2c4357;
+    font-size: 12px;
+    padding-left: 7px;
+}
+.author{
+    color: #2c4357;
+    padding-right: 10px;
+}
+@media (min-width: 800px) {
+    .container{
+        font-size: 16px;
+    }
+    .link{
+        font-size: 16px;
+    }
+
+}

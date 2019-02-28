@@ -6,14 +6,12 @@
 .weather{
     background: #e4ffdd;
     width: 150px;
-    /*margin: 10px 0 0;*/
     font-family: 'firamono-bold', sans-serif;
     text-transform: uppercase;
     color: #e4ffdd;
     padding-bottom: 15px;
 }
 .day-week{
-    /*width: 80%;*/
     padding: 10px 0 10px 15px;
 }
 .temperature{
@@ -50,10 +48,8 @@
     top: 0;
 }
 .weather-wind{
-    /*text-align: end;*/
     position: relative;
     padding: 5px 0 0 0;
-    /*margin: 5px 3% 5px 0;*/
 }
 .weather-svg---wind{
     width: 40px;
@@ -72,4 +68,30 @@
     position: absolute;
     left: -40px;
     bottom: -2px;
+}
+.loader {
+    width: 100px;
+    height: 100px;
+    margin-left: 50%;
+    align-self: center;
+}
+.loader:after {
+    content: " ";
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #2c4357;
+    border-color: #2c4357 transparent #2c4357 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

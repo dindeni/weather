@@ -47,7 +47,6 @@ const forecast =({listForecast})=>{
 
         const clouds = (valueClouds)=>{
 
-
                 const value = valueClouds.clouds.all;
                 switch (true) {
                     case value > 0 && value < 30:
@@ -58,11 +57,10 @@ const forecast =({listForecast})=>{
                         return 'cloud';
                     default: return 'cloud';
                 }
-
         };
 
 
-        if (listForecast !== ''){
+        if (listForecast !== '' && listForecast.listForecast.list){
             const data=(currentData, format) =>new Intl.DateTimeFormat(
                 'en-US', format).format(currentData);
             return listForecast.listForecast.list.filter((value,i, arr)=>{
@@ -113,14 +111,11 @@ const forecast =({listForecast})=>{
                                </svg>
                            </div>
                        </div>
-
                    </div>
                )
           });
 
-        }
-
-
+        }else return <div className={classes.loader}></div>
 
     };
 

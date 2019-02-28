@@ -42,7 +42,7 @@ class FormSearch extends Component{
                    : this.props.getCitiesNull();
 
 
-           }, 1000)
+           }, 500)
        })
            .catch((err)=>{
                console.log(err)
@@ -54,7 +54,6 @@ class FormSearch extends Component{
         if (this.props.searchCity !== prevProps.searchCity &&
             this.props.searchCity.length !== 0){
 
-            //this.props.getWeatherNow(this.props.searchCity[0].GeoObject.name, 'now');
             //map coordinates
             this.coordX = this.props.searchCity[0].GeoObject.Point.pos.slice(9);
             this.coordY = this.props.searchCity[0].GeoObject.Point.pos.slice(0, 9);
@@ -65,8 +64,6 @@ class FormSearch extends Component{
                 this.myMap.destroy()
             }
         }
-
-
 
         if (this.props.listWeather !== prevProps.listWeather){
 
@@ -98,8 +95,6 @@ class FormSearch extends Component{
            this.props.getWeatherNow(this.props.geolocation.city,
                this.props.geolocation.country, 'now');
 
-           /*this.props.getWeatherNow(this.props.geolocation.city,
-               this.props.geolocation.country, 'forecast');*/
            this.props.getWeatherForecast(this.props.geolocation.city,
                this.props.geolocation.country)
        }

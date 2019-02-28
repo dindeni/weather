@@ -7,10 +7,6 @@ import Forecast from './forecast/forecast';
 
 
 const main =({listWeather, listForecast})=>{
-
-/*const options ={weekday: 'long', month: 'short'};*/
-
-
 const getDate = (dataType)=>{
     switch (dataType) {
         case 'dayWeek':
@@ -24,7 +20,6 @@ const getDate = (dataType)=>{
                 {day: 'numeric'}).format(new Date());
 
     }
-
 
 };
 
@@ -44,22 +39,13 @@ const getWeather = (swithValue)=>{
 
     }else return 'city not found';
 
-
 };
 
 const test =()=>{
     if (listForecast !== ''){
         console.log(listForecast.listForecast)
     }
-
-
-
-
-
-
 };
-
-
 
 const clouds = ()=>{
 
@@ -76,13 +62,6 @@ const clouds = ()=>{
             }
         }
     };
-
-
-    /*if (listWeather.listWeather !== ''){
-        console.log(listWeather.listWeather.clouds.all)
-    }*/
-
-
 
 return(
         <main className={classes.main}>

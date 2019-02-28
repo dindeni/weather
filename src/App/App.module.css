@@ -6,25 +6,29 @@
   font-style: normal;
 
 }
-
-
-
-
 @font-face {
   font-family: 'firamono-regular';
   src: url('../App/fonts/firamono-regular-webfont.woff2') format('woff2'),
   url('../App/fonts/firamono-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
-
 body{
   margin: 0;
   background: url("../App/image/Rectangle.svg");
   font-family: 'firamono-regular', sans-serif;
   font-size: calc(1vw + 1em);
-
 }
+.body{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.footer{
+  margin: auto auto 0 auto;
+  width: 100%;
+}
+
+
 
 
